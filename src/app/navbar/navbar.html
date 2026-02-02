@@ -1,0 +1,19 @@
+<ng-template #navLinks>
+@for(item of nav_items; track item.id) {
+      <a [routerLink]="['/events', item.name.toLowerCase()]" class="hover:text-indigo-400" href="#">{{item.name}}</a>
+    }
+</ng-template>
+
+@if (navParametro== true) {
+  <nav class="fixed top-0 inset-x-0 h-16 bg-gray-900 backdrop-blur text-white z-50">
+  <div class="max-w-7xl h-full items-center gap-6 flex ml-6"> 
+     <ng-container *ngTemplateOutlet="navLinks"></ng-container>
+  </div>
+</nav>
+} @else {
+  <aside class="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-gray-900 text-white p-6 z-40">
+    <nav class="flex flex-col gap-3">
+       <ng-container *ngTemplateOutlet="navLinks"></ng-container>
+    </nav>
+  </aside>
+}

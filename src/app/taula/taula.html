@@ -1,0 +1,47 @@
+<div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default">
+
+    <table class="w-full text-sm text-left rtl:text-right text-body">
+        <thead class="bg-neutral-secondary-soft border-b border-default">
+            <tr>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    Izena
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    Data
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    Herria
+                </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    Zenbat
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+                @if(events().length > 0) {
+                @for(event of events(); track event.id) {
+            <tr class="odd:bg-gray-200 even:bg-neutral-secondary-soft border-b border-default">
+                <td scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
+                    {{event.nameEu}}
+                </td>
+                <td class="px-6 py-4">
+                    {{event.startDate}}
+                </td>
+                <td class="px-6 py-4">
+                    {{event.municipalityEu}}
+                </td>
+                <td class="px-6 py-4">
+                    {{event.priceEu}}
+                </td>
+            <tr>
+                }
+                }@else {
+                    <tr>
+                        <td class="px-6 py-4" colspan="4">
+                            Ez da daturik aurkitu
+                        </td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+</div>
