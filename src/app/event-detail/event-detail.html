@@ -7,8 +7,11 @@
   <p><strong>Herria:</strong> {{ event.municipalityEu }}</p>
   <p><strong>Prezioa:</strong> {{ event.priceEu }}</p>
 
-  <div div [innerHTML]="event.descriptionEu">
-  </div>
+  <div [innerHTML]="event.descriptionEu"></div>
+  
+  <!-- <p class="mt-4">
+    {{ event.descriptionEu }}
+  </p> -->
 } @else {
   <p>Kargatzen…</p>
 }
