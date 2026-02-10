@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Api } from '../API/api';
 
 @Component({
@@ -9,6 +9,7 @@ import { Api } from '../API/api';
 })
 export class Taula implements OnInit {
   private route = inject(ActivatedRoute);
+  private router = inject(Router); 
   private api = inject(Api);
 
   // events: any[] = [];
@@ -29,4 +30,10 @@ export class Taula implements OnInit {
       }
     });
   }
+
+   public goToEvent(eventId: number): void {
+  const type = this.route.snapshot.paramMap.get('type');
+  this.router.navigate(['/events', type, eventId]);
+}
+
 }

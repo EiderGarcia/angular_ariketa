@@ -30,4 +30,8 @@ export class Api {
       }
     });
   }
+  get_event_by_id(id: string) {
+  return this.http.get<any>(`${this.baseUrl}/${id}`);
+}
+
 }
