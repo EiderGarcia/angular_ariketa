@@ -4,13 +4,14 @@ import { EventDetail } from './event-detail/event-detail';
 
 export const routes: Routes = [
 
-     {
-    path: 'events/:type',
-    component: Taula
-  },
+    
   {
     path: 'events/:type/:id',
     component: EventDetail
+  },
+   {
+    path: 'events/:type',
+    component: Taula
   },
   {
     path: '',

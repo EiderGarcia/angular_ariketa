@@ -1,17 +1,19 @@
-@if (event) {
+
+@if (event()) {
   <h1 class="text-2xl font-bold mb-4">
-    {{ event.nameEu }}
+    {{ event().nameEu }}
   </h1>
 
-  <p><strong>Data:</strong> {{ event.startDate }}</p>
-  <p><strong>Herria:</strong> {{ event.municipalityEu }}</p>
-  <p><strong>Prezioa:</strong> {{ event.priceEu }}</p>
+  <p><strong>Data:</strong> {{ event().startDate }}</p>
+  <p><strong>Herria:</strong> {{ event().municipalityEu }}</p>
+  <p><strong>Prezioa:</strong> {{ event().priceEu }}</p>
 
-  <div [innerHTML]="event.descriptionEu"></div>
-  
-  <!-- <p class="mt-4">
-    {{ event.descriptionEu }}
+  <div [innerHTML]="event().descriptionEu"></div>
+   <!-- <p class="mt-4">
+    {{ event().descriptionEu }}
   </p> -->
 } @else {
   <p>Kargatzen…</p>
 }
+
+
